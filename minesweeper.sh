@@ -84,7 +84,7 @@ key_description
 echo ""
 echo "Height: $height"
 echo "Width: $width"
-echo "Remaining Bombs: $bombs"
+echo "Remaining Flags: $remaining_flags"
 echo ""
 
 reset_color="\e[0m"
@@ -360,7 +360,7 @@ function print_remaining_flags() {
     if [[ $bombs -lt 0 ]]; then
         print_color=$red_fg
     fi
-    gecho -en "\e[s\e[$((y + 2))F\e[2KRemaining Bombs: ${print_color}$remaining_flags${reset_color}, ${remaining_blocks}\e[u"
+    gecho -en "\e[s\e[$((y + 2))F\e[2KRemaining Bombs: ${print_color}$remaining_flags${reset_color}\e[u"
 }
 
 function game_clear() {
