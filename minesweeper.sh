@@ -363,7 +363,7 @@ function print_remaining_flags() {
     if [[ $remaining_flags -lt 0 ]]; then
         print_color=$red_fg
     fi
-    gecho -en "\e[s\e[$((y + 2))F\e[2KRemaining Bombs: ${print_color}$remaining_flags${reset_color}\e[u"
+    gecho -en "\e[s\e[$((y + 2))F\e[2KRemaining Flags: ${print_color}$remaining_flags${reset_color}\e[u"
 }
 
 function game_clear() {
