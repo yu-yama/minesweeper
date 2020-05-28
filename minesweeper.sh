@@ -6,7 +6,7 @@ function show_help() {
     echo "Usage: minesweeper [height (default: 10)] [width (default: 10)] [number of bombs (default: 15% of the field)]"
     echo "    Height and width must be an integer not less than 5"
     echo "    The number of bombs must be a positive number"
-    echo "    The number of bombs must not exceed height * width - 9"
+    echo "    The number of bombs must be less than height * width - 9"
     echo ""
     key_description
     echo ""
