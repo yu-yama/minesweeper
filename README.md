@@ -8,7 +8,7 @@ Giving an input while a program is running may cause a interference.
 Refrain from inputting a number of keys randomly at once.
 
 ## Versions
-#### The latest beta release is v0.1.0b, and there are no stable releases yet.
+#### The latest stable release is v0.1.0, and the latest beta release is v0.1.0b.
 The versions ending with a "b" are beta, so there may be fatal bugs.
 The versions ending without a "b" are stable, which are usually, but not guaranteed to be, bug-free.
 
