@@ -191,7 +191,7 @@ function open() {
     if $first_open; then
         set_bombs
     fi
-    print_status_bar "Opening tiles..."
+    print_status_bar "Opening tile(s)..."
     case ${board_flag[$(get_position $y $x)]} in
         "0" )
             print_status_bar "${red_fg}The block is already opened"
@@ -246,7 +246,7 @@ function open() {
             done
         fi
     done
-    print_status_bar "Tiles opened!"
+    print_status_bar "Tile(s) opened!"
 }
 
 # function open_tile() {
