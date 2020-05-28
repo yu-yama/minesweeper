@@ -152,6 +152,7 @@ function in_range {
 }
 
 function set_bombs() {
+    print_status_bar "Deploying mines..."
     for i in $(seq $((y - 1)) $((y + 1))); do
         for j in $(seq $((x - 1)) $((x + 1))); do
             if in_range $i $height && in_range $j $width; then
@@ -190,6 +191,7 @@ function open() {
     if $first_open; then
         set_bombs
     fi
+    print_status_bar "Opening tiles..."
     case ${board_flag[$(get_position $y $x)]} in
         "0" )
             print_status_bar "${red_fg}The block is already opened"
@@ -245,6 +247,7 @@ function open() {
             done
         fi
     done
+    print_status_bar "Tiles opened!"
 }
 
 # function open_tile() {
