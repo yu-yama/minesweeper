@@ -99,11 +99,10 @@ number_colors=("\e[34m" "\e[32m" "\e[31m" "\e[35m" "\e[33m" "\e[34m" "\e[37m" "\
 for i in $(seq 1 8); do
     numbers+=("\e[40m${number_colors[i]}$i$reset_color")
 done
-numbers+=("${number_colors[9]}●$reset_color") # bomb
+numbers+=("${number_colors[9]}●$reset_color")
 padding_num=5
 padding_left="\e[${padding_num}C"
 
-# reset_color="\e[0m"
 block="$light_grey_bg $reset_color"
 flagged="$red_bg $reset_color"
 opened="$black_bg $reset_color"
@@ -248,11 +247,6 @@ function open() {
     done
     print_status_bar "Tile(s) opened!"
 }
-
-# function open_tile() {
-#     tile_y=$1
-#     tile_x=$2
-# }
 
 function update_tile() {
     desty=$1
