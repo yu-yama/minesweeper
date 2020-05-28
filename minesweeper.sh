@@ -425,7 +425,7 @@ while [[ $remaining_blocks -gt 0 ]]; do
             if [[ $chtcd = "awesome" ]]; then
                 print_status_bar ${(j::)board_bomb}
             elif [[ $chtcd = "awesomemeow" ]]; then
-                print_status_bar "Achievement unlocked: \e[1m\"Cheated victory taste awful\""
+                print_status_bar "Achievement unlocked: \e[1m\"A cheated victory tastes awful\""
                 show_answer
             else
                 print_status_bar "${red_fg}Invalid input"
