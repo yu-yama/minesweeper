@@ -304,6 +304,7 @@ function flag() {
             print_remaining_flags
             board_flag[$(get_position $y $x)]=$((cur_flag * -1))
             update_tile $y $x
+            print_status_bar "Toggled the flag"
             ;;
     esac
 }
