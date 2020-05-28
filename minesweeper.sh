@@ -224,7 +224,6 @@ function open() {
         if [[ ${board_bomb[cur_loc]} -eq 9 ]]; then
             print_status_bar "${red_bg}${white_fg}A mine has exploded!"
             show_answer
-            clear_format
         fi
         print_remaining_flags
         if [[ $remaining_blocks -le 0 ]]; then
@@ -293,6 +292,7 @@ function show_answer() {
         board_flag[$i]=0
         update_tile $(((i - 1) / width)) $(((i - 1) % width))
     done
+    clear_format
 }
 
 function flag() {
@@ -431,6 +431,7 @@ while [[ $remaining_blocks -gt 0 ]]; do
             if [[ $chtcd = "awesome" ]]; then
                 print_status_bar ${(j::)board_bomb}
             elif [[ $chtcd = "awesomemeow" ]]; then
+                print_status_bar "Achievement unlocked: \e[1m\"Cheated victory taste awful\""
                 show_answer
             else
                 print_status_bar "${red_fg}Invalid input"
