@@ -4,6 +4,10 @@ A zsh based minesweeper
 ## Description
 This is a minesweeper that works on a BSD environment (such as mac) with GNU coreutils
 
+## Requirements
+* Zsh saved in /usr/local/bin
+* GNU coreutils
+
 ## Versions
 #### The latest stable release is v0.1.0, and the latest beta release is v0.2.0b.
 The versions ending with a "b" are beta, so there may be fatal bugs.
