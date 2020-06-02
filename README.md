@@ -9,7 +9,7 @@ This is a minesweeper that works on a BSD environment (such as mac) with GNU cor
 * GNU coreutils
 
 ## Versions
-#### The latest stable release is v0.1.0, and the latest beta release is v0.2.0b.
+#### The latest stable release is v0.2.0, and the latest beta release is v0.2.0b.
 The versions ending with a "b" are beta, so there may be fatal bugs.
 The versions ending without a "b" are stable, which are usually, but not guaranteed to be, bug-free.
 
