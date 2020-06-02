@@ -211,6 +211,7 @@ function open() {
             show_cursor
             if read -s -q; then
                 print_status_bar "Continue..."
+                flag
             else
                 print_status_bar "Aborting..."
                 return 0
