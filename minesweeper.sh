@@ -152,10 +152,6 @@ function get_position() {
     gecho $(($1 * width + $2 + 1))
 }
 
-function get_status() {
-    gecho ${board_bomb[$((get_position $1 $2))]}
-}
-
 function in_range {
     if [[ $1 -ge 0 && $1 -lt $2 ]]; then
         return 0
