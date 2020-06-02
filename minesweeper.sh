@@ -2,6 +2,18 @@
 
 set -e
 
+stty -echo
+
+function hide_cursor() {
+    gecho -en "\e[?25l"
+}
+
+function show_cursor() {
+    gecho -en "\e[?12;25h"
+}
+
+hide_cursor
+
 function show_help() {
     echo "Usage: minesweeper [height (default: 10)] [width (default: 10)] [number of bombs (default: 15% of the field)]"
     echo "    Height and width must be an integer not less than 5"
@@ -128,6 +140,8 @@ x=0
 
 function clear_format() {
     gecho -e "\e[0m\e[$((height -y))B"
+    stty echo
+    show_cursor
     exit 0
 }
 
@@ -198,12 +212,14 @@ function open() {
             ;;
         "1" )
             print_status_bar "${red_fg}The selected cell has been flagged. Do you really want to open it? (yN)"
+            show_cursor
             if read -s -q; then
                 print_status_bar "Continue..."
             else
                 print_status_bar "Aborting..."
                 return 0
             fi
+            hide_cursor
             ;;
     esac
     block_qy=($y)
@@ -374,7 +390,9 @@ function game_clear() {
 chtcd=""
 while [[ $remaining_blocks -gt 0 ]]; do
     key_in=""
+    show_cursor
     builtin read -s -k 1 key_in
+    hide_cursor
     case $key_in in
         "j" | "J" )
             down
