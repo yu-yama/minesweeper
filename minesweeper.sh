@@ -263,17 +263,18 @@ function open() {
 function update_tile() {
     desty=$1
     destx=$2
-    gecho -en "\e[s"
+    cur_move="\e[s"
     if [[ $desty -gt $y ]]; then
-        gecho -en "\e[$((desty - y))B"
+        cur_move="${cur_move}\e[$((desty - y))B"
     elif [[ $desty -lt $y ]]; then
-        gecho -en "\e[$((y - desty))A"
+        cur_move="${cur_move}\e[$((y - desty))A"
     fi
     if [[ $destx -gt $x ]]; then
-        gecho -en "\e[$((destx - x))C"
+        cur_move="${cur_move}\e[$((destx - x))C"
     elif [[ $destx -lt $x ]]; then
-        gecho -en "\e[$((x - destx))D"
+        cur_move="${cur_move}\e[$((x - destx))D"
     fi
+    gecho -en $cur_move
     case $board_flag[$(get_position $desty $destx)] in
         "1" )
             gecho -en $flagged
